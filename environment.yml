@@ -11,3 +11,9 @@ dependencies:
   - rasterio
   - pyepsg
   - folium
+  - matplotlib
+  - numpy
+  - deep_translator
+  - shapely
+  - rasterstats
+  - seaborn
