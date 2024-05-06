@@ -35,3 +35,40 @@ def clip_raster_to_aoi(raster_path, AOI_path, output_path):
             dst.write(clipped_data)
 
     print(f"Clipped raster saved to {output_path}")
+
+# Extracting raster bounds and converting them to latitude and longitude 
+
+import pyproj
+
+def get_tiff_bounds_to_latlon(tiff_path):
+    """
+    Extracts bounding box from a TIFF file and converts it to latitude and longitude. 
+
+    Args:
+        tiff_path (str): Path to the TIFF file.
+
+    Returns:
+        Tuple: A tuple containing (lon_min, lat_min, lon_max, lat_max).
+    """
+    
+    # Open the tIFF file
+    with rio.open(tiff_path) as dataset:
+        # Get the bounding box in map coordinates
+        bounding_box = dataset.bounds
+
+        # Define the source (TIFF) and target (WGS 84) coordinate systems
+        src_crs = pyproj.CRS(dataset.crs)
+        target_crs = pyproj.CRS("EPSG:4326") #WGS 84
+
+        # Create a transformer
+        transformer = pyproj.Transformer.from_crs(src_crs, target_crs, always_xy=True)
+
+        # Transform the bounding box coordinates
+        minx, miny, maxx, maxy = bounding_box
+        lon_min, lat_min = transformer.transform(minx, miny)
+        lon_max, lat_max = transformer.transform(maxx, maxy)
+
+        return lon_min, lat_min, lon_max, lat_max
+
+
+
