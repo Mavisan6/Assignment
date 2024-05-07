@@ -36,6 +36,9 @@ def clip_raster_to_aoi(raster_path, AOI_path, output_path):
 
     print(f"Clipped raster saved to {output_path}")
 
+
+
+
 # Extracting raster bounds and converting them to latitude and longitude 
 
 import pyproj
