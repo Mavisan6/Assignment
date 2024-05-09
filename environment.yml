@@ -17,3 +17,5 @@ dependencies:
   - shapely
   - rasterstats
   - seaborn
+  - earthaccess
+  - pyproj

@@ -190,7 +190,9 @@ def scale_bar(ax, location=(0.92, 0.05)):
 #Adding a North Arrow to a Cartopy Plot
 
 def add_north_arrow(ax, x=0.9, y=0.9):
+    
     """Add a north arrow at position x, y (in axes-relative coordinates)"""
+    
     ax.annotate('N', xy=(x, y-0.05), xycoords='axes fraction',
                 ha='center', va='center', fontsize=20,
                 bbox=dict(boxstyle="square", facecolor='none', edgecolor='none'))
