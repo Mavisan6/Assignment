@@ -20,7 +20,7 @@ The sections below provide a brief description of the project's dependencies, ho
 - [Dependencies](#dependencies)
 - [Installation and Setup](#installation-and-setup)
 - [Usage](#usage)
-- [Data](#data)
+- [Data Provided](#data-provided)
 - [License](#license)
 - [Acknowledgements](#acknowledgments)
 
@@ -95,11 +95,11 @@ By following these steps, you'll have a local copy of the forked repository, and
 
 After cloning the repository, the next step is to set up the environment which includes all the necessary dependencies to run the project.
 
-**<u>Install Anaconda or Miniconda</u>**
+### Install Anaconda or Miniconda
    
 Anaconda and Miniconda are both free distributions of Python that include a package manager called `conda`. They help to manage libraries, dependencies, and environments. For downlaod, visit the [Anaconda website](https://www.anaconda.com/download) or the [Miniconda website](https://docs.anaconda.com/free/miniconda/index.html) to download the installer for your operating system and follow the installation instructions provided on the website.
 
-**<u>Create the Conda Environment</u>**
+### Create the Conda Environment
 
 The `environment.yml` file contains all the necessary package information needed to create an environment that mirrors the project's setup. To install it follow the below instructions.
 
@@ -121,7 +121,7 @@ The `environment.yml` file contains all the necessary package information needed
      ```
    - Replace `your-environment-name` with the name of the environment that you have given in the `environment.yml` file.
 
-**<u>Verify the Environment</u>**
+### Verify the Environment
 
 After setting up the environment, it's good practice to verify that everything is installed correctly.
 
