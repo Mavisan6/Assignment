@@ -28,7 +28,7 @@ The sections below provide a brief description of the project's dependencies, ho
 Each library required for this project is listed with a brief description and a link to its documentation for more detailed information on usage and features.
 
 1. **Python**: the programming language used for this project ([Python Documentation](https://www.python.org/doc/)).
-2. **Geopandas**: a library that makes working with geospatial data in Python easier. ([Geopandas Documentation](https://geopandas.org/en/stable/docs.html)).
+2. **Geopandas**: a library that makes working with geospatial data in Python easier ([Geopandas Documentation](https://geopandas.org/en/stable/docs.html)).
 3. **Cartopy**: a Python package designed for geospatial data processing to create maps and perform other geospatial analyses. It provides an interface built on top of Matplotlib for creating publication-quality maps ([Cartopy Documentation](https://scitools.org.uk/cartopy/docs/latest/).
 4. **JupyterLab**: an interactive notebook authoring application and editing environment. This is necessary for the correct visualisation of the script files as they contain markdown cells for code and workflow explanation ([JupyterLab Documentation](https://jupyterlab.readthedocs.io/en/stable/index.html)).
 5. **ipywidgets**: interactive HTML widgets for Jupyter notebooks ([ipywidgets Documentation](https://ipywidgets.readthedocs.io/en/latest/)).
@@ -50,7 +50,7 @@ To streamline the setup process, all dependencies are included in the [environme
 
 ### 1. Forking the Repository
 
-To get started with the project, you should first create your own copy of the repository by forking it. To do so, visit the [original repository] (https://github.com/Mavisan6/Assignment/tree/main) on GitHub and click the 'Fork' button in the upper right corner. This will create a copy of the repository in your GitHub account (you will need to create an account first if you don't have one already).
+To get started with the project, you should first create your own copy of the repository by forking it. To do so, visit the [original repository](https://github.com/Mavisan6/Assignment/tree/main) on GitHub and click the 'Fork' button in the upper right corner. This will create a copy of the repository in your GitHub account (you will need to create an account first if you don't have one already).
 
 ### 2. Cloning the Forked Repository
 
@@ -97,7 +97,7 @@ After cloning the repository, the next step is to set up the environment which i
 
 ### Install Anaconda or Miniconda
    
-Anaconda and Miniconda are both free distributions of Python that include a package manager called `conda`. They help to manage libraries, dependencies, and environments. For downlaod, visit the [Anaconda website](https://www.anaconda.com/download) or the [Miniconda website](https://docs.anaconda.com/free/miniconda/index.html) to download the installer for your operating system and follow the installation instructions provided on the website.
+Anaconda and Miniconda are both free distributions of Python that include a package manager called `conda`. They help to manage libraries, dependencies, and environments. Visit the [Anaconda website](https://www.anaconda.com/download) or the [Miniconda website](https://docs.anaconda.com/free/miniconda/index.html) to download the installer for your operating system and follow the installation instructions provided on the website.
 
 ### Create the Conda Environment
 
@@ -231,13 +231,13 @@ Shapefiles are used to represent geospatial vector data. Each `.shp` file comes 
 
 Raster files store pixel-based data and are accompanied by files like `.tfw` and `.tif.aux.xml` which contain georeferencing information and metadata. These files ensure that the raster data aligns correctly with the map coordinates.
 
-- **habcon.tiff**: A Habitat Connectivity map used to extract connectivity values and perform zonal statistics. This map is a product of a BSc Dissertation study.
+- **habcon.tiff**: A Habitat Connectivity map used to extract connectivity values and perform zonal statistics. This map was previously created using Circuitscape as part of my [BSc dissertation project](https://www.linkedin.com/posts/mariavittoria-santarelli_sustainableagriculture-agroecological-community-activity-6954342396763504641-3Ndx?utm_source=share&utm_medium=member_desktop).
 
 ### Additional Contextual Data
 
 Additional shapefiles are provided for context and visualization purposes, not directly used in the analysis:
 
-- **nesting.shp**: Shows nesting sites of a specific bird species, provided by researcher Gianpasquale Chiatante.
+- **nesting.shp**: Shows nesting sites of a specific bird species, provided by the ornithologist [Gianpasquale Chiatante](https://www.researchgate.net/profile/Gianpasquale-Chiatante). 
 - **urban.shp**: Represents urban areas within the study region.
 
 ### Important Notes
@@ -247,8 +247,8 @@ Additional shapefiles are provided for context and visualization purposes, not d
 
 By utilizing these data files as instructed in the Jupyter notebooks, you can replicate the analysis and explore the geospatial trends within the Area of Interest.
 
-Data on Agricultural Management Type and Protected Areas was sourced and extracted from the land cover map of Apulia, available from the regional 
-spatial database [(Banche Dati - S.I.T. - SIT Puglia (regione.puglia.it)).](https://pugliacon.regione.puglia.it/web/sit-puglia-paesaggio/file-vettoriali). The folder Data_files contains test data that was used to run the code as described below.
+Shapefile data on Agricultural Management Type, Protected Areas and Urban Areas was sourced and extracted from the land cover map of Apulia, available from the regional 
+spatial database [(Banche Dati - S.I.T. - SIT Puglia (regione.puglia.it))](https://pugliacon.regione.puglia.it/web/sit-puglia-paesaggio/file-vettoriali).
 
 
 ## License
