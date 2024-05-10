@@ -158,7 +158,8 @@ The `.netrc` file stores login and initialization information used by the auto-l
      ```
    - Save the file to your home directory.
 
-4. **Set File Permissions** (Unix-like systems):
+4. **Set File Permissions**
+- **Unix-like systems**:
    - For security reasons, the `.netrc` file should only be readable by you. Change the file permissions by running:
      
      ```bash
@@ -166,7 +167,16 @@ The `.netrc` file stores login and initialization information used by the auto-l
      ```
    - This command makes the `.netrc` file readable and writable only by the file's owner.
 
-5. **Verify the Configuration**:
+- **Windows**:
+   - Right-click on the _netrc file and select ‘Properties’.
+   - Go to the ‘Security’ tab.
+   - Click on ‘Edit…’ to change permissions.
+   - In the permissions window, ensure that your user account has ‘Full control’ or at least ‘Read’ and ‘Write’ permissions.
+   - Remove permissions for other users if necessary, leaving only your account with access.
+   - Click ‘Apply’ to set the new permissions.
+   - Click ‘OK’ to close the properties window.
+
+6. **Verify the Configuration**:
    - You can verify that Earthaccess is using the `.netrc` file correctly by attempting to access NASA Earthdata through the library. If you're not prompted for credentials, the setup is successful.
 
 By following these steps, you'll be able to use Earthaccess without manually entering your credentials each time. Make sure to keep your `.netrc` file secure, as it contains sensitive information.
