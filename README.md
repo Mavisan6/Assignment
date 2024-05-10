@@ -18,7 +18,7 @@ The sections below provide a brief description of the project's dependencies, ho
 ### Table of Contents
 
 - [Dependencies](#dependencies)
-- [Installation](#installation)
+- [Installation and Setup](#installation-and-setup)
 - [Usage](#usage)
 - [Data](#data)
 - [License](#license)
@@ -46,35 +46,209 @@ Each library required for this project is listed with a brief description and a 
 
 To streamline the setup process, all dependencies are included in the [environment.yml](environment.yml) file. This allows for quick and consistent environment setup to run the code. Please follow the instructions provided below to create and activate your environment using this file.
 
-## Installation
+## Installation and Setup
 
-### Setting up Your Environment
+### 1. Forking the Repository
+
+To get started with the project, you should first create your own copy of the repository by forking it. To do so, visit the [original repository] (https://github.com/Mavisan6/Assignment/tree/main) on GitHub and click the 'Fork' button in the upper right corner. This will create a copy of the repository in your GitHub account (you will need to create an account first if you don't have one already).
+
+### 2. Cloning the Forked Repository
+
+After forking the repository on GitHub, you'll want to work with it on your local machine. To do this, you need to clone it using Git, which is a version control system that lets you manage and keep track of your source code history.
+
+Here are the steps to clone the forked repository:
+
+1. **Install Git**:
+   - If you don't have Git installed on your computer, download and install it from [Git's official website](https://git-scm.com/).
+
+2. **Open Terminal or Command Prompt**:
+   - On macOS or Linux, open the Terminal.
+   - On Windows, open Command Prompt or Git Bash (if you installed Git for Windows).
+
+3. **Navigate to the Directory**:
+   - Use the `cd` command to navigate to the directory where you want to clone the repository.
+
+4. **Clone the Repository**:
+   - Run the following command:
+     ```bash
+     git clone https://github.com/your-username/repository-name.git
+     ```
+   - Replace `your-username` with your actual GitHub username.
+   - Replace `repository-name` with the actual name of the repository you forked.
+
+5. **Navigate to the Repository Folder**:
+   - After cloning, a new folder with the repository's name will be created. Navigate into it with:
+     ```bash
+     cd repository-name
+     ```
+
+6. **Verify the Remote Repository**:
+   - Ensure that the remote URL has been set correctly by running:
+     ```bash
+     git remote -v
+     ```
+   - You should see the URL of your fork listed as `origin`.
+
+By following these steps, you'll have a local copy of the forked repository, and you can start working on it right away!
+
+### 3. Setting up your Environment
+
+After cloning the repository, the next step is to set up the environment which includes all the necessary dependencies to run the project.
+
+**<u>Install Anaconda or Miniconda</u>**
+   
+Anaconda and Miniconda are both free distributions of Python that include a package manager called `conda`. They help to manage libraries, dependencies, and environments. For downlaod, visit the [Anaconda website](https://www.anaconda.com/download) or the [Miniconda website](https://docs.anaconda.com/free/miniconda/index.html) to download the installer for your operating system and follow the installation instructions provided on the website.
+
+**<u>Create the Conda Environment</u>**
+
+The `environment.yml` file contains all the necessary package information needed to create an environment that mirrors the project's setup. To install it follow the below instructions.
+
+1. **Navigate to the Project Directory**:
+   - Open your terminal or command prompt.
+   - Use the `cd` command to navigate to the root directory of the cloned repository.
+
+2. **Create the Environment**:
+   - Run the following command to create a new conda environment based on the `environment.yml` file:
+     ```bash
+     conda env create -f environment.yml
+     ```
+   - This command reads the `environment.yml` file in your project directory and sets up an environment with all the dependencies listed in the file.
+
+3. **Activate the Environment**:
+   - Once the environment is created, you need to activate it to use it:
+     ```bash
+     conda activate your-environment-name
+     ```
+   - Replace `your-environment-name` with the name of the environment that you have given in the `environment.yml` file.
+
+**<u>Verify the Environment</u>**
+
+After setting up the environment, it's good practice to verify that everything is installed correctly.
+
+1. **Check Installed Packages**:
+   - With the environment activated, list all the installed packages using:
+     ```bash
+     conda list
+     ```
+   - This will show you all the packages installed in the active conda environment.
+
+2. **Test Running the Project**:
+   - Try running the project or a test script to ensure that the environment is set up properly and all dependencies are working as expected.
+
+By following these steps, you should have a fully functional development environment for the project. If you encounter any issues, check the `environment.yml` file for errors or missing details, and ensure that all steps were followed correctly.
+
+### 4. Configuring .netrc for Earthaccess
+
+The `.netrc` file stores login and initialization information used by the auto-login process. It allows you to access NASA Earthdata without having to enter your credentials every time.
+
+1. **Create a NASA Earthdata Account**:
+   - If you don't already have an account, register at [NASA Earthdata Login](https://earthaccess.readthedocs.io/en/latest/tutorials/getting-started/). You'll need this account to access data using Earthaccess.
+
+2. **Locate Your Home Directory**:
+   - The `.netrc` file should be placed in your home directory. On Unix-like systems, this is typically `/home/your-username/`. On Windows, it might be `C:\Users\your-username\`.
+
+3. **Create the .netrc File**:
+   - Open a text editor and create a new file named `.netrc`.
+   - Add the following lines, replacing `your-username` and `your-password` with your NASA Earthdata credentials:
+     
+     ```
+     machine urs.earthdata.nasa.gov
+     login your-username
+     password your-password
+     ```
+   - Save the file to your home directory.
+
+4. **Set File Permissions** (Unix-like systems):
+   - For security reasons, the `.netrc` file should only be readable by you. Change the file permissions by running:
+     
+     ```bash
+     chmod 600 ~/.netrc
+     ```
+   - This command makes the `.netrc` file readable and writable only by the file's owner.
+
+5. **Verify the Configuration**:
+   - You can verify that Earthaccess is using the `.netrc` file correctly by attempting to access NASA Earthdata through the library. If you're not prompted for credentials, the setup is successful.
+
+By following these steps, you'll be able to use Earthaccess without manually entering your credentials each time. Make sure to keep your `.netrc` file secure, as it contains sensitive information.
+
 
 ## Usage
 
-## Data
+This project consists of a series of Jupyter notebooks that should ideally be run in a specific order to ensure all operations perform correctly, as some notebooks depend on the output from previous ones.
+
+### 1. Running the Notebooks
+
+To run the notebooks, you'll need to use Jupyter Lab or Jupyter Notebook. If you've followed the installation instructions, you should have Jupyter Lab installed in your environment.
+
+1. **Start Jupyter Lab**:
+   - Activate your conda environment:
+     ```bash
+     conda activate your-environment-name
+     ```
+   - Start Jupyter Lab by running:
+     ```bash
+     jupyter lab
+     ```
+   - This will open Jupyter Lab in your web browser.
+
+2. **Open and Run the Notebooks**:
+   - In Jupyter Lab, navigate to the folder containing the notebooks.
+   - The notebooks are named in the order they should be run (e.g., `ScriptP1.ipynb`, `ScriptP2.ipynb`, etc.).
+   - Open each notebook and run the cells in order by pressing `Shift + Enter` or by using the 'Run' menu at the top.
+
+### 2. Notebook Dependencies
+
+- **Part 1**: This is the starting point of the project and does not depend on any other notebooks.
+- **Part 2**: Downloads satellite images and can be run independently of the others.
+- **Part 3**: Depends on the outputs of both Part 1 and Part 2. Ensure these have been run successfully before starting Part 3.
+- **Part 4**: For those who wish to skip directly to the analysis, the final output files are provided in the `Data_files` folder. However, running Parts 1 through 3 is recommended for a complete understanding of the process.
+
+### 3. Tips for Running the Notebooks
+
+- Save your work often by clicking the 'Save' icon or using the `Ctrl + S` (or `Cmd + S` on Mac) shortcut.
+- If a notebook fails to run, check that you have executed all previous notebooks in the sequence.
+- You can clear all outputs and rerun a notebook to ensure a fresh start by going to the 'Kernel' menu and selecting 'Restart Kernel and Clear All Outputs'.
+
+By following these instructions, you should be able to run and interact with the Jupyter notebooks in this project successfully.
+
+## Data Provided
+
+This project includes a variety of data files essential for conducting the analysis. Below is a detailed description of each file and its purpose within the project:
+
+### Python Functions File
+
+- **my_functions.py**: A Python file containing custom functions used across multiple notebooks. Importing this file in your notebooks will allow you to access and reuse these functions, ensuring consistency and reducing code duplication.
+
+### Shapefiles
+
+Shapefiles are used to represent geospatial vector data. Each `.shp` file comes with several supplementary files like `.sbx`, `.dbf`, `.shx`, and `.cpg` that store indexing, attribute data, shape index, and character encoding information respectively. These files are necessary for the shapefile to be read and processed correctly.
+
+- **AgriculturalPlots.shp**: Contains data on the location, number, and management type of agricultural plots within the Area of Interest (AOI). The file is pre-clipped to the AOI to minimize computational load.
+- **Area_of_Interest.shp**: Defines the boundaries of the chosen AOI for the case study. This file can be used to limit the analysis to a specific region.
+- **PAs.shp**: Provides the location and extent of Protected Areas in the Apulia region. The code demonstrates how to clip this data to the AOI.
+
+### Raster Files
+
+Raster files store pixel-based data and are accompanied by files like `.tfw` and `.tif.aux.xml` which contain georeferencing information and metadata. These files ensure that the raster data aligns correctly with the map coordinates.
+
+- **habcon.tiff**: A Habitat Connectivity map used to extract connectivity values and perform zonal statistics. This map is a product of a BSc Dissertation study.
+
+### Additional Contextual Data
+
+Additional shapefiles are provided for context and visualization purposes, not directly used in the analysis:
+
+- **nesting.shp**: Shows nesting sites of a specific bird species, provided by researcher Gianpasquale Chiatante.
+- **urban.shp**: Represents urban areas within the study region.
+
+### Important Notes
+
+- When performing additional analysis or modifications, ensure you use the correct `.shp` or `.tiff` file along with its associated files to maintain data integrity.
+- The provided data files are ready for use in the analysis and should not require further preprocessing unless specified in the notebooks.
+
+By utilizing these data files as instructed in the Jupyter notebooks, you can replicate the analysis and explore the geospatial trends within the Area of Interest.
 
 Data on Agricultural Management Type and Protected Areas was sourced and extracted from the land cover map of Apulia, available from the regional 
 spatial database [(Banche Dati - S.I.T. - SIT Puglia (regione.puglia.it)).](https://pugliacon.regione.puglia.it/web/sit-puglia-paesaggio/file-vettoriali). The folder Data_files contains test data that was used to run the code as described below.
-
-#### AgriculturalPlots.shp
-
-The shapefile AgriculturalPlots contains information on the location, number and management type for all agricultural plots under the Area of Interest (AOI). The file has already been clipped to the AOI to reduce computational time and facilitate the handling of the Geodataframe. However, the code will still show other data preparation tools, such as deleting columns and translating the content of the shapefile. 
-
-#### Area_of_Interest.shp
-
-A specific AOI was chosen for the presented case study to reduce processing time, however, the code could be run to assess trends in the whole region. The shapefile Area_of_Interest contains information on the boundaries of the AOI.
-
-#### PAs.shp
-
-The shapefile PAs contains information on the location and extent of Protected Areas around the whole region of Apulia. The code will show how to clip the shapefile to the AOI. 
-
-#### Final.asc
-
-This is the Habitat Connectivity map produced as a result of a study conducted for my [BSc Dissertation](https://www.linkedin.com/posts/mariavittoria-santarelli_sustainableagriculture-agroecological-community-activity-6954342396763504641-3Ndx?utm_source=share&utm_medium=member_desktop). The code will  use this data to extract habitat connectivity values and perform zonal statistics.
-
-
-
 
 
 ## License
