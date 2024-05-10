@@ -240,11 +240,6 @@ Additional shapefiles are provided for context and visualization purposes, not d
 - **nesting.shp**: Shows nesting sites of a specific bird species, provided by the ornithologist [Gianpasquale Chiatante](https://www.researchgate.net/profile/Gianpasquale-Chiatante). 
 - **urban.shp**: Represents urban areas within the study region.
 
-### Important Notes
-
-- When performing additional analysis or modifications, ensure you use the correct `.shp` or `.tiff` file along with its associated files to maintain data integrity.
-- The provided data files are ready for use in the analysis and should not require further preprocessing unless specified in the notebooks.
-
 By utilizing these data files as instructed in the Jupyter notebooks, you can replicate the analysis and explore the geospatial trends within the Area of Interest.
 
 Shapefile data on Agricultural Management Type, Protected Areas and Urban Areas was sourced and extracted from the land cover map of Apulia, available from the regional 
