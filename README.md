@@ -41,7 +41,7 @@ Each library required for this project is listed with a brief description and a 
 12.  **Shapely**: a library for manipulation and analysis of planar geometric objects ([Shapely Documentation](https://shapely.readthedocs.io/en/stable/manual.html)).
 13.  **Rasterstats**: a Python module for summarizing geospatial raster datasets based on vector geometries ([Rasterstats Documentation](https://pythonhosted.org/rasterstats/)).
 14.  **Seaborn**: a statistical data visualization library based on Matplotlib ([Seaborn Documentation](https://seaborn.pydata.org/)).
-15.  **Earthaccess**: a library to search, download, or stream NASA Earth science data ([Earthaccess Documentation](https://earthaccess.readthedocs.io/en/latest/tutorials/getting-started/)).
+15.  **Earthaccess**: a library to search, download, or stream NASA Earth science data ([Earthaccess Documentation](https://earthaccess.readthedocs.io/en/latest/)).
 16.  **pyproj**: python interface to PROJ, a cartographic projections and coordinate transformations library ([pyproj Documentation](https://pyproj4.github.io/pyproj/stable/).
 
 To streamline the setup process, all dependencies are included in the [environment.yml](environment.yml) file. This allows for quick and consistent environment setup to run the code. Please follow the instructions provided below to create and activate your environment using this file.
@@ -142,7 +142,7 @@ By following these steps, you should have a fully functional development environ
 The `.netrc` file stores login and initialization information used by the auto-login process. It allows you to access NASA Earthdata without having to enter your credentials every time.
 
 1. **Create a NASA Earthdata Account**:
-   - If you don't already have an account, register at [NASA Earthdata Login](https://earthaccess.readthedocs.io/en/latest/tutorials/getting-started/). You'll need this account to access data using Earthaccess.
+   - If you don't already have an account, register at [NASA Earthdata Login](https://www.earthdata.nasa.gov/). You'll need this account to access data using Earthaccess.
 
 2. **Locate Your Home Directory**:
    - The `.netrc` file should be placed in your home directory. On Unix-like systems, this is typically `/home/your-username/`. On Windows, it might be `C:\Users\your-username\`.
