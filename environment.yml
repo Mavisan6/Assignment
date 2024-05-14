@@ -13,7 +13,6 @@ dependencies:
   - folium
   - matplotlib
   - numpy
-  - deep_translator
   - shapely
   - rasterstats
   - seaborn
