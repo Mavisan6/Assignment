@@ -137,6 +137,14 @@ After setting up the environment, it's good practice to verify that everything i
 
 By following these steps, you should have a fully functional development environment for the project. If you encounter any issues, check the `environment.yml` file for errors or missing details, and ensure that all steps were followed correctly.
 
+### Installing deep_translator
+
+This process will have installed all packages that we need but one. deep_translator is not available on Conda channels because Conda packages are community maintained, and not all packages are available on Conda channels. To install `deep_translator`, you can use `pip`, which is the package installer for Python. Simply run the following command in your terminal after activating your environment:
+
+```bash
+pip install deep_translator
+```
+
 ### 4. Configuring .netrc for Earthaccess
 
 The `.netrc` file stores login and initialization information used by the auto-login process. It allows you to access NASA Earthdata without having to enter your credentials every time.
