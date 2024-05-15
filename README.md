@@ -249,7 +249,7 @@ Shapefiles are used to represent geospatial vector data. Each `.shp` file comes 
 
 Raster files store pixel-based data and are accompanied by files like `.tfw` and `.tif.aux.xml` which contain georeferencing information and metadata. These files ensure that the raster data aligns correctly with the map coordinates.
 
-- **habcon.tiff**: A Habitat Connectivity map used to extract connectivity values and perform zonal statistics. This map was previously created using Circuitscape as part of my [BSc dissertation project](https://www.linkedin.com/posts/mariavittoria-santarelli_sustainableagriculture-agroecological-community-activity-6954342396763504641-3Ndx?utm_source=share&utm_medium=member_desktop).
+- **habmap.tif**: A Habitat Connectivity map used to extract connectivity values and perform zonal statistics. This map was previously created using Circuitscape as part of my [BSc dissertation project](https://www.linkedin.com/posts/mariavittoria-santarelli_sustainableagriculture-agroecological-community-activity-6954342396763504641-3Ndx?utm_source=share&utm_medium=member_desktop).
 
 ### Additional Contextual Data
 
